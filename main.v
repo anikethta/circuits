@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ms/1ms
 `include "src/T_FF.v"
 
 module main;
