@@ -1,12 +1,9 @@
-// Implementation of an 8-bit Shift Register 
-module 8bit_shiftreg(
-    input clk,
-    input areset,  // async active-high reset to zero
-    input load,
-    input ena,
-    input [7:0] data,
-    output reg [7:0] q); 
-	
+// Implementation of an 8-bit shift register
+module shift_reg(clk, areset, load, ena, data, q); 
+    input clk, areset, load, ena;
+    input [7:0] data;
+    output reg [7:0] q;
+
     always @(posedge clk or posedge areset) begin
         if (areset) begin
             q <= 8'b0;
