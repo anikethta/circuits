@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "D_FF.v"
+`include "src/T_FF.v"
 
 module main;
 
@@ -10,7 +10,7 @@ reg D, clk, reset;
 wire Q;
 
 // init
-D_FF dut(Q, D, clk, reset);
+T_FF dut(Q, clk, reset);
 
 // starts the clock pulse
 initial begin 
@@ -25,14 +25,14 @@ initial begin
     $dumpfile("main.vcd");
     $dumpvars(0, main);
 
-    reset = 1;
-    D <= 0;
-    #100;
     reset = 0;
-    D <= 1;
     #100;
-    D <= 0;
+    reset = 1;
+    #200;
+    reset = 0;
     #100;
-    D <= 1;
+    reset = 1;
+    #50;
+    reset = 0;
 end
 endmodule

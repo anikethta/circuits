@@ -1,4 +1,4 @@
-// Trying to model a D-Flip Flop 
+// Implementation of a D-Flip Flop 
 module D_FF(Q, D, clk, reset);
 
 input D, clk, reset; // Data input, clock signal, reset
